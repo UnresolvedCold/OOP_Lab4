@@ -31,6 +31,19 @@ public class Showroom {
         }
     }
 
+    boolean buyBike​(String companyName, String modelName, int maxPrice)
+    {
+        boolean f = false;
+        if(this.currentAccountBalance >= maxPrice)
+        {
+            this.currentAccountBalance = this.currentAccountBalance - maxPrice;
+            Bike ob = new Bike();
+            addBike(ob);
+            f = true;
+        }
+        return f;
+    }
+
     public void removeBike(int bikeIdx){
         int pivot = 0 ;
         for(int i=0;i<numBikes+pivot;i++){
